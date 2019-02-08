@@ -46,7 +46,7 @@
 
             <div class="row">
                 <div class="col">
-                    <form method="POST" action="signup_submit.php">
+                    <form method="POST" action="signup_submit.php" id="signup_form">
                         <div class="form-group">
                             <label> NAME </label>  
                             <input type="text" class="form-control   " name="name" id="name" placeholder="fill name" required>
@@ -61,7 +61,7 @@
 
                         <div class="form-group">
                             <label>PASSWORD</label>  
-                            <input type="password" class="form-control" name="password" id="pass" placeholder="password">
+                            <input type="password" class="form-control" name="password" id="pass" placeholder="password" required>
                         </div>
 
                         <div class="form-group">

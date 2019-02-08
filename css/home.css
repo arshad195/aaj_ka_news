@@ -48,6 +48,12 @@
     border: 1px solid #34ce57;
     border-radius: 20px;
     padding: 20px;
-     box-shadow:5px 6px 10px 10px #34ce57;
+     box-shadow:5px 4px 8px 8px #34ce57;
+}
+#signup_form{
+    border: 1px solid #34ce57;
+    border-radius: 20px;
+    padding: 20px;
+     box-shadow:5px 4px 8px 10px #34ce57;
 }
 
