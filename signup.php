@@ -42,39 +42,41 @@
                     <h2 class="text-success text-left">Register Form</h2>
                 </div>
             </div>
+            <br>
 
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <form method="POST" action="signup_submit.php" id="signup_form">
+                            <div class="form-group">
+                                <label> NAME </label>  
+                                <input type="text" class="form-control   " name="name" id="name" placeholder="fill name" required>
+                                <span style="color:red;"></span>
+                            </div>
 
-            <div class="row">
-                <div class="col">
-                    <form method="POST" action="signup_submit.php" id="signup_form">
-                        <div class="form-group">
-                            <label> NAME </label>  
-                            <input type="text" class="form-control   " name="name" id="name" placeholder="fill name" required>
-                            <span style="color:red;"></span>
-                        </div>
+                            <div class="form-group">
+                                <label> EMAIL  </label> 
+                                <input type="email" class="form-control" name="email" id="email" placeholder="email" required>
+                                <span style="color:red;"></span>
+                            </div>
 
-                        <div class="form-group">
-                            <label> EMAIL  </label> 
-                            <input type="email" class="form-control" name="email" id="email" placeholder="email" required>
-                            <span style="color:red;"></span>
-                        </div>
+                            <div class="form-group">
+                                <label>PASSWORD</label>  
+                                <input type="password" class="form-control" name="password" id="pass" placeholder="password" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label>PASSWORD</label>  
-                            <input type="password" class="form-control" name="password" id="pass" placeholder="password" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>CONFIRM_PASSWORD</label>
-                            <input type="password" class="form-control" name="password" id="cpass" placeholder="c password"/>
-                        </div>
-                        <span id="check" style="color:red"></span>
-                        <br/><br/>
-                        <div class="form-group">
-                            <button type="submit" id="submit" class="btn-lg btn-success">submit</button>
-                        </div>
-                        <br/>
-                    </form>
+                            <div class="form-group">
+                                <label>CONFIRM_PASSWORD</label>
+                                <input type="password" class="form-control" name="password" id="cpass" placeholder="c password"/>
+                            </div>
+                            <span id="check" style="color:red"></span>
+                            <br/><br/>
+                            <div class="form-group">
+                                <button type="submit" id="submit" class="btn-lg btn-success">submit</button>
+                            </div>
+                            <br/>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
