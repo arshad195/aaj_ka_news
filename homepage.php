@@ -77,6 +77,7 @@
             </div>  <!-- end of row -->
         </div>  <!-- end of container -->
         <br><br>
+        
         <!-- user name and pic -->
 
         <?php
@@ -86,7 +87,7 @@
             ?>
 
 
-            <div class="container" style="background:#17a2b8; border-radius: 30px;">
+            <div class="container" style=" background:radial-gradient(circle ,seagreen, limegreen); border-radius: 30px; box-shadow: 4px 5px 6px 7px green ; ">
                 <div class="row">
                     <div class="col-xs-6 col-md-4">
 
@@ -102,8 +103,8 @@
                         if (!$conn) {
                             die("connection faild:" . mysqli_connect_error());
                         }
-
-                        $displayquery = "select pic from pic where id=49 ";
+                        $name = $_SESSION['name'];
+                        $displayquery = "select pic from pic where name='$name' order by id desc limit 1 ";
                         $querydisplaying = mysqli_query($conn, $displayquery);
 
                         while ($result = mysqli_fetch_array($querydisplaying)) {
@@ -117,7 +118,7 @@
                     </div>
                     <div class="col-xs-12 col-md-6">
                         <h2 style="color:red;"> WELCOME !</h2>
-                        <b> <h3 class="text-left" style="color:whitesmoke"> <?php echo $_SESSION['name']; ?></h3> </b>
+                        <b> <h3 class="text-left" style="color:whitesmoke; font-size: 30px;"> <?php echo $_SESSION['name']; ?></h3> </b>
 
                     </div>
 
@@ -142,8 +143,15 @@
         <!-- news section -->
         <div class="container">
             <div class="row " style="margin-top:20px;padding-right: 20px; ">
-                <div class="col-xs-8 col-md-4 text-right  top_news">
-                    <h3 class="text-left text-danger">update news</h3>
+                <div class="col-xs-12 col-md-4 text-right  top_news">
+                    <h3 class="text-left text-danger">top news channel</h3>
+                    <select onchange="location = this.value;"  style="width:100%; height:30px; border: 2px #28a745 solid; background: limegreen; border-radius: 20px;">
+                        <option value="https://timesofindia.indiatimes.com">TIMES OF INDIA</option>
+                        <option value="https://www.hindustantimes.com">HINDUSTAN TIME</option>
+                        <option value="https://www.thehindu.com">THE HINDU </option>
+                        <option value="https://abpnews.abplive.in">ABP NEWS</option>
+                        <option value="http://www.newsonair.com">ALL INDIA NEWS</option>
+                    </select>
                 </div>
 
                 <div class="col-xs-12 col-md-8 text-center update_news_section" style="">

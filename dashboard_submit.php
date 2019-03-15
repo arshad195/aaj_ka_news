@@ -17,7 +17,7 @@ if (!$conn) {
 // $conn = mysqli_connect('localhost', 'root');
 // mysqli_select_db($conn, $ungineering);
 if (isset($_POST["submit"])) {
-    //$username = $_POST['name'];
+    $username = $_SESSION['name'];
     $files = $_FILES['file'];
     // print_r($files);
     $filename = $files['name'];
@@ -35,7 +35,7 @@ if (isset($_POST["submit"])) {
         move_uploaded_file($filetmp, "picture/" . $filename);
         ?>
         <?php
-        $img = "insert into pic (pic) values('$distinationfile')";
+        $img = "insert into pic (pic,name) values('$distinationfile','$username')";
         $query = mysqli_query($conn, $img);
         $displayquery = "select pic from pic ";
         $querydisplaying = mysqli_query($conn, $displayquery);

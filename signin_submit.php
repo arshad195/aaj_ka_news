@@ -25,6 +25,7 @@ if ($num == 1) {
     $_SESSION['name'] = $name;
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $password;
+    $_SESSION['email']=$email;
     //eader('location:homepage.php');
     echo "<script> location.href='homepage.php' </script>";
 } else {
@@ -33,7 +34,7 @@ if ($num == 1) {
 
     echo"<script>alert('your password or email are wrong')</script>";
 
-    echo "<script> location.href='login.php' </script> ";
+    echo "<script> location.href='signin.php' </script> ";
 }
 
 

@@ -67,7 +67,7 @@
 
                             <div class="form-group">
                                 <label>CONFIRM_PASSWORD</label>
-                                <input type="password" class="form-control" name="password" id="cpass" placeholder="c password"/>
+                                <input type="password" class="form-control" name="cpassword" id="cpass" placeholder="c password"/>
                             </div>
                             <span id="check" style="color:red"></span>
                             <br/><br/>
@@ -80,6 +80,6 @@
                 </div>
             </div>
         </div>
-
+       <!-- <script src="js/signup_checkpass.js"></script> --> 
     </body>
 </html>

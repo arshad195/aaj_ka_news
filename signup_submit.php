@@ -1,7 +1,12 @@
 <?php
-
 session_start();
 //header('location:homepage.php');
+
+$password = $_POST['password'];
+$cpassword=$_POST['cpassword'];
+
+if($password==$cpassword){
+
 
 $hostname = "localhost";
 $username = "root";
@@ -27,21 +32,25 @@ if ($row == 1) {
 //If there is a  record match in the Database - Not Available
     echo"<script>alert('this email are already used')</script>";
     echo"<script>location.href='signup.php'</script>";
-    
 } else {
     // echo '0'; //No Record Found - Email is available 
-
-
-
+    
     $sql = "INSERT INTO users (name,email,password) values('$name','$email','$password')";
     if (!mysqli_query($conn, $sql)) {
         die("Error :" . $sql . "<br>" . mysqli_error($conn));
     }
-    
 }
 
 
 mysqli_close($conn);
+echo"<script>alert('you are successfully signup')</script>";
 echo"<script>location.href='homepage.php'</script>";
+    
+}
+
+ else {
+    echo"<script>alert('your password and confirm password are not same')</script>";
+    echo"<script>location.href='signup.php'</script>";
+}
 ?>
 

@@ -3,7 +3,6 @@ session_start();
 if (!isset($_SESSION['name'])) {
     header('location:signin.php');
 }
-
 ?>
 
 <!doctype html>
@@ -92,9 +91,10 @@ if (!isset($_SESSION['name'])) {
                     if (!$conn) {
                         die("connection faild:" . mysqli_connect_error());
                     }
+                    $name = $_SESSION['name'];
                     //$img = "insert into pic (pic) values('$distinationfile')";
                     // $query = mysqli_query($conn, $img);
-                    $displayquery = "select pic from pic where id=60 ";
+                    $displayquery = "select pic from pic where name='$name' order by id desc limit 1 ";
                     $querydisplaying = mysqli_query($conn, $displayquery);
 
                     while ($result = mysqli_fetch_array($querydisplaying)) {
@@ -139,10 +139,51 @@ if (!isset($_SESSION['name'])) {
         <div class="container">
             <div class="row">
                 <div class="col apna_news_section">
-                    hello how are u
-                    
+
+
+                    <?php
+                    $hostname = "localhost";
+                    $username = "root";
+                    $db_password = "12345678";
+                    $database = "ungineering";
+
+                    $conn = mysqli_connect($hostname, $username, $db_password, $database);
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
+
+                    $name = $_SESSION['name'];
+
+                    $q = "select * from status where name='$name' order by id desc ";
+
+                    $result = mysqli_query($conn, $q);
+                    if (!$result) {
+                        die(mysqli_error($conn));
+                    }
+                    while ($row = mysqli_fetch_array($result)) {
+                        ?>
+
+
+                       
+
+                            -<p>
+                                <?php
+                                echo $row['status'];
+                                ?></p>
+                        
+                        <br>
+
+
+                        <?php
+                    }
+
+                    mysqli_close($conn);
+                    ?>
+
+
+
                 </div>
-                
+
             </div>
         </div>
 
